@@ -15,6 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->string('firstName',30);
             $table->string('lastName',30);
             $table->enum('gender',
@@ -22,9 +23,9 @@ class CreateStudentsTable extends Migration
             $table->date('birthdate');
             $table->string('mailAddress',150);
             $table->integer('phone');
-            $table->integer('userId')->unsigned()->nullable();
+            $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('id')->on('users');
-            $table->integer('studentTypeId')->unsigned()->nullable();
+            $table->unsignedBigInteger('studentTypeId');
             $table->foreign('studentTypeId')->references('id')->on('students_types');
             $table->boolean('active');
             $table->timestamps();

@@ -15,13 +15,14 @@ class CreateStudentCoursesTable extends Migration
     {
         Schema::create('student_courses', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->date('sessionStart');
             $table->date('sessionEnd');
             $table->double('fee', 8,
                 2);
-            $table->integer('studentId')->unsigned();
+            $table->unsignedBigInteger('studentId');
             $table->foreign('studentId')->references('id')->on('students');
-            $table->integer('courseId')->unsigned();
+            $table->unsignedBigInteger('courseId');
             $table->foreign('courseId')->references('id')->on('courses');
             $table->integer('rating');
             $table->boolean('active');

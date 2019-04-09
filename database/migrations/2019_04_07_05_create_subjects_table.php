@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CreateSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('query',1000);
-            $table->integer('courseId')->unsigned();
+            $table->string('name',250);
+            $table->unsignedBigInteger('courseId');
             $table->foreign('courseId')->references('id')->on('courses');
-            $table->integer('createdBy')->unsigned();
-            $table->foreign('createdBy')->references('id')->on('users');
-            $table->integer('assignTo')->unsigned();
-            $table->foreign('assignTo')->references('id')->on('users');
+            $table->string('description',1000);
+            $table->boolean('active');
+
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('subjects');
     }
 }
