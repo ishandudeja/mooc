@@ -52,6 +52,6 @@ class User extends Authenticatable
         return $this->hasMany(Tutter::class);
      }
      public function postCreatedBy(){
-        return $this->hasMany(Posts::class)
+        return $this->hasMany(Posts::class);
      }
 }
