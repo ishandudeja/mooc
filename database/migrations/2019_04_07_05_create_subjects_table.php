@@ -19,6 +19,7 @@ class CreateSubjectsTable extends Migration
             $table->unsignedBigInteger('courseId');
             $table->foreign('courseId')->references('id')->on('courses');
             $table->string('description',1000);
+            $table->string('imageUrl',255);
             $table->boolean('active');
 
             $table->timestamps();
