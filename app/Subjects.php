@@ -11,12 +11,12 @@ class Subjects extends Model
     ];
 
     public function course(){
-        return $this->belongsTo(Courses::class);
+        return $this->belongsTo(Courses::class,'courseId','id');
     }
     public function onlineContent(){
-        return $this->hasMany(OnlineContent::class);
+        return $this->hasMany(OnlineContent::class,'subjectId','id');
     }
     public function postSubject(){
-        return $this->hasMany(OnlineContent::class);
+        return $this->hasMany(OnlineContent::class,'subjectId','id');
     }
 }

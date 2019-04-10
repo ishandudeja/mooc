@@ -12,10 +12,10 @@ class OnlineContent extends Model
 
     public function subject()
     {
-       return $this->belongsTo(Subjects::class);
+       return $this->belongsTo(Subjects::class,'subjectId','id');
     }
     public function postContent(){
-        return $this->hasMany(PostContent::class);
+        return $this->hasMany(PostContent::class,'contentId','id');
     }
 
 }

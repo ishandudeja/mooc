@@ -10,11 +10,11 @@ class StudentCourse extends Model
         'sessionStart', 'sessionEnd','fee','studentId','courseId','rating','active'
     ];
 
-    public function courses(){
-        return $this->belongsToMany(Courses::class);
-    }
-
-    public function students(){
-        return $this->belongsToMany(Students::class);
-    }
+//    public function courses(){
+//        return $this->belongsToMany(Courses::class,'');
+//    }
+//
+//    public function students(){
+//        return $this->belongsToMany(Students::class);
+//    }
 }

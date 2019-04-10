@@ -10,10 +10,10 @@ class PostContent extends Model
         'contentId', 'postId', 'active',
     ];
     public function post(){
-        $this->belongsTo(Posts::class);
+        $this->belongsTo(Posts::class,'postId','id');
     }
     public function onlineContent(){
-       return $this->belongsTo(onlineContent::class);
+       return $this->belongsTo(onlineContent::class,'contentId','id');
     }
 
 }

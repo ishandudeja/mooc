@@ -37,21 +37,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function students(){
-        return $this->hasOne(Students::class);
+        return $this->hasOne(Students::class,'userId','id');
     }
 
     public function postComments()
     {
-        return $this->hasMany(PostComments::class);
+        return $this->hasMany(PostComments::class,'userId','id');
     }
 
-    public function userRole(){
-        return $this->belongsToMany(UserRole::class);
+    public function roles(){
+        return $this->belongsToMany(Roles::class,'user_roles','userId','roleId');
     }
      public function tutter(){
-        return $this->hasMany(Tutter::class);
+        return $this->hasMany(Tutter::class,'userId','id');
      }
      public function postCreatedBy(){
-        return $this->hasMany(Posts::class);
+        return $this->hasMany(Posts::class,'createdBy','id');
      }
+
+     public function postAssignTo(){
+        return $this->hasMany(Posts::class,'assignTo','id');
+     }
+
 }

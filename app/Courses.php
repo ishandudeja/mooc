@@ -10,19 +10,19 @@ class Courses extends Model
         'name', 'description', 'level','programId','active',
     ];
     public function program(){
-        return $this->belongsTo(Programs::class);
+        return $this->belongsTo(Programs::class,'programId','id');
     }
 
     public function postCourses(){
-        return $this->hasMany(PostCourses::class);
+        return $this->hasMany(PostCourses::class,'courseId','id');
     }
 
-    public function studentCourse(){
-      return  $this->belongsToMany(StudentCourse::class);
+    public function students(){
+      return  $this->belongsToMany(Students::class,'student_courses','courseId','studentId');
     }
 
     public function subject(){
-        return $this->hasMany(Subjects::class);
+        return $this->hasMany(Subjects::class,'courseId','id');
     }
 
 }

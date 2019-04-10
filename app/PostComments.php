@@ -10,14 +10,14 @@ class PostComments extends Model
         'postId', 'postTypeId', 'userId','comment','active','rating',
     ];
     public  function Post(){
-     return   $this->belongsTo(Posts::class);
+     return   $this->belongsTo(Posts::class,'postId','id');
     }
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'userId','id');
     }
 
     public function postType(){
-        return $this->belongsTo(PostType::class);
+        return $this->belongsTo(PostType::class,'postTypeId','id');
     }
 }

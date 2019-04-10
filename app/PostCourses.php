@@ -11,10 +11,10 @@ class PostCourses extends Model
     ];
 
     public function post(){
-        return $this->belongsTo(Posts::class);
+        return $this->belongsTo(Posts::class,'postId','id');
     }
 
     public function courses(){
-        return $this->belongsTo(Courses::class);
+        return $this->belongsTo(Courses::class,'courseId','id');
     }
 }

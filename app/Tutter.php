@@ -11,9 +11,9 @@ class Tutter extends Model
     ];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'userId','id');
     }
 public function subjects(){
-        return $this->belongsTo(Subjects::class);
+        return $this->belongsTo(Subjects::class,'subjectId','id');
 }
 }

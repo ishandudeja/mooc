@@ -10,15 +10,15 @@ class UserRole extends Model
         'userId', 'roleId', 'active',
     ];
 
-    public function role()
-    {
-        return $this->belongsToMany(Roles::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsToMany(User::class);
-    }
+//    public function role()
+//    {
+//        return $this->belongsTo(Roles::class);
+//    }
+//
+//    public function user()
+//    {
+//        return $this->belongsTo(User::class);
+//    }
 
 
 }

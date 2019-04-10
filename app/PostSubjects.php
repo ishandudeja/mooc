@@ -10,10 +10,10 @@ class PostSubjects extends Model
         'subjectId', 'postId','active',
     ];
     public function subject(){
-        return $this->belongsTo(Subjects::class);
+        return $this->belongsTo(Subjects::class,'subjectId','id');
     }
 
     public function post(){
-        return $this->belongsTo(Posts::class);
+        return $this->belongsTo(Posts::class,'postId','id');
     }
 }

@@ -10,9 +10,9 @@ class Students extends Model
         'firstName', 'lastName', 'gender', 'birthdate', 'mailAddress', 'phone', 'userId', 'studentTypeId', 'active',
     ];
 
-    public function studentCourse()
+    public function Courses()
     {
-        return $this->belongsToMany(StudentCourse::class);
+        return $this->belongsToMany(Courses::class,'student_courses','studentId','courseId');
 
     }
 
