@@ -15,7 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">--}}
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -28,6 +28,16 @@
                 {{ config('app.name', 'Laravel') }}
             </a>
         </h5>
+         <div class="my-0 mr-md-auto font-weight-normal nav-item dropdown">
+
+            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><i class="fas fa-bars"></i> Programs</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01" data-aos="fade-down" >
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -36,24 +46,24 @@
             @if (Route::has('login'))
 
                     @auth
-                        <a class="p-2 text-dark" href="{{ url('/home') }}">My Learning</a>
+                        <a class="p-2 text-dark" href="{{ url('/home') }}">My Learning <i class="fas fa-chalkboard-teacher"></i></a>
                     @else
                         {{--<a class="p-2 text-dark" href="{{ route('login') }}">Enrol Now</a>--}}
 
                         @if (Route::has('register'))
-                            <a class="p-2 text-dark" href="{{ route('register') }}">Enrol Now</a>
+                            <a class="p-2 text-dark" href="{{ route('register') }}">Enrol Now <i class="fas fa-hand-pointer"></i></a>
                         @endif
                     @endauth
 
             @endif
-            <a class="p-2 text-dark" href="#">Program Offered</a>
-            <a class="p-2 text-dark" href="#">Study at Mooc</a>
-            <a class="p-2 text-dark" href="#">About</a>
-            <a class="p-2 text-dark" href="#">Contact</a>
+            <a class="p-2 text-dark" href="#">Program Offered <i class="fas fa-user-graduate"></i></a>
+            <a class="p-2 text-dark" href="#">Study at Mooc <i class="fas fa-university"></i></a>
+            <a class="p-2 text-dark" href="#">About <i class="fas fa-address-card"></i></a>
+            <a class="p-2 text-dark" href="#">Contact <i class="fas fa-at"></i></a>
             <!-- Authentication Links -->
             @guest
 
-                <a class="p-2 text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="p-2 text-dark" href="{{ route('login') }}">{{ __('Login') }} <i class="fas fa-user"></i></a>
 
                 {{--@if (Route::has('register'))--}}
 
@@ -90,7 +100,7 @@
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
-                <img class="mb-2" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+                {{--<img class="mb-2" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">--}}
                 <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
             </div>
             <div class="col-6 col-md">
