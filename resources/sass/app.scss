@@ -5,10 +5,39 @@
 // Variables
 @import 'variables';
 
+$fa-font-path:        "../webfonts";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
+@import "~aos/src/sass/aos.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.bgimage {
+    width:100%;
+    height:500px;
+    background: url('https://southerncourier.co.za/wp-content/uploads/sites/36/2018/04/ThinkstockPhotos-610454902.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.bgimage h3 {
+    color:white;
+    text-shadow:2px 2px #333;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: 400;
+}
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
 }
