@@ -19,8 +19,8 @@ class CreateCoursesTable extends Migration
             $table->string('name',255);
             $table->string('description',255);
             $table->string('level',20);
-            $table->unsignedBigInteger('programId');
-            $table->foreign('programId')->references('id')->on('programs');
+            $table->unsignedBigInteger('program_id');
+            $table->foreign('program_id')->references('id')->on('programs');
             $table->boolean('active');
             $table->string('imageUrl',255);
             $table->timestamps();

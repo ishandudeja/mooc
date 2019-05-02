@@ -11,18 +11,18 @@ class Posts extends Model
         'query', 'createdBy', 'assignTo','active',
     ];
     public function postComments(){
-       return $this->hasMany(PostComments::class,'postId','id');
+       return $this->hasMany(PostComments::class);
     }
 
     public function postContent(){
-       return $this->hasOne(PostComments::class,'postId','id');
+       return $this->hasOne(PostComments::class);
     }
     public function postCourse(){
-       return $this->hasOne(PostCourses::class,'postId','id');
+       return $this->hasOne(PostCourses::class);
     }
 
     public function postSubject(){
-        return $this->hasOne(PostSubjects::class,'postId','id');
+        return $this->hasOne(PostSubjects::class);
     }
 
     public function postCreatedBy(){

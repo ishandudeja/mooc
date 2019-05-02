@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Subjects extends Model
 {
     protected $fillable = [
-        'name','description','courseId','active',
+        'name','description','course_id','active',
     ];
 
     public function course(){
-        return $this->belongsTo(Courses::class,'courseId','id');
+        return $this->belongsTo(Courses::class);
     }
     public function onlineContent(){
-        return $this->hasMany(OnlineContent::class,'subjectId','id');
+        return $this->hasMany(OnlineContent::class);
     }
     public function postSubject(){
-        return $this->hasMany(OnlineContent::class,'subjectId','id');
+        return $this->hasMany(OnlineContent::class);
     }
 }

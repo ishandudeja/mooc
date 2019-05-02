@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class PostComments extends Model
 {
     protected $fillable = [
-        'postId', 'postTypeId', 'userId','comment','active','rating',
+        'postId', 'postType_id', 'user_id','comment','active','rating',
     ];
     public  function Post(){
-     return   $this->belongsTo(Posts::class,'postId','id');
+     return   $this->belongsTo(Posts::class);
     }
 
     public function user(){
-        return $this->belongsTo(User::class,'userId','id');
+        return $this->belongsTo(User::class);
     }
 
     public function postType(){
-        return $this->belongsTo(PostType::class,'postTypeId','id');
+        return $this->belongsTo(PostType::class);
     }
 }

@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class PostSubjects extends Model
 {
     protected $fillable = [
-        'subjectId', 'postId','active',
+        'subject_id', 'post_id','active',
     ];
     public function subject(){
-        return $this->belongsTo(Subjects::class,'subjectId','id');
+        return $this->belongsTo(Subjects::class);
     }
 
     public function post(){
-        return $this->belongsTo(Posts::class,'postId','id');
+        return $this->belongsTo(Posts::class);
     }
 }

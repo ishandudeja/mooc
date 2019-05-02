@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PostCourses extends Model
 {
     protected $fillable = [
-        'courseId', 'postId', 'active',
+        'course_id', 'post_id', 'active',
     ];
 
     public function post(){

@@ -23,10 +23,10 @@ class CreateStudentsTable extends Migration
             $table->date('birthdate');
             $table->string('mailAddress',150);
             $table->integer('phone');
-            $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('id')->on('users');
-            $table->unsignedBigInteger('studentTypeId');
-            $table->foreign('studentTypeId')->references('id')->on('students_types');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('studentType_id');
+            $table->foreign('studentType_id')->references('id')->on('students_types');
             $table->boolean('active');
             $table->timestamps();
         });

@@ -20,10 +20,10 @@ class CreateStudentCoursesTable extends Migration
             $table->date('sessionEnd');
             $table->double('fee', 8,
                 2);
-            $table->unsignedBigInteger('studentId');
-            $table->foreign('studentId')->references('id')->on('students');
-            $table->unsignedBigInteger('courseId');
-            $table->foreign('courseId')->references('id')->on('courses');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses');
             $table->integer('rating');
             $table->boolean('active');
             $table->timestamps();

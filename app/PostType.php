@@ -11,6 +11,6 @@ class PostType extends Model
     ];
 
     public function postcomment(){
-        return $this->hasMany(PostType::class,'postTypeId','id');
+        return $this->hasMany(PostType::class);
     }
 }

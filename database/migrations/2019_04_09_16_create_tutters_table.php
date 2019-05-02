@@ -16,10 +16,10 @@ class CreateTuttersTable extends Migration
         Schema::create('tutters', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('userId') ;
-            $table->foreign('userId')->references('id')->on('users');
-            $table->unsignedBigInteger('subjectId');
-            $table->foreign('subjectId')->references('id')->on('subjects');
+            $table->unsignedBigInteger('user_id') ;
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects');
             $table->boolean('active');
             $table->timestamps();
         });

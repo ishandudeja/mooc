@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class OnlineContent extends Model
 {
     protected $fillable = [
-        'caption', 'description', 'url', 'subjectId', 'active',
+        'caption', 'description', 'url', 'subject_id', 'active',
     ];
 
     public function subject()
     {
-       return $this->belongsTo(Subjects::class,'subjectId','id');
+       return $this->belongsTo(Subjects::class);
     }
     public function postContent(){
-        return $this->hasMany(PostContent::class,'contentId','id');
+        return $this->hasMany(PostContent::class);
     }
 
 }

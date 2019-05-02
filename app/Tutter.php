@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tutter extends Model
 {
     protected $fillable = [
-        'name','userId','subjectId','active',
+        'name','userId','subject_id','active',
     ];
 
     public function user(){
-        return $this->belongsTo(User::class,'userId','id');
+        return $this->belongsTo(User::class);
     }
 public function subjects(){
-        return $this->belongsTo(Subjects::class,'subjectId','id');
+        return $this->belongsTo(Subjects::class);
 }
 }

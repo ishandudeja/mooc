@@ -16,10 +16,10 @@ class CreatePostSubjectsTable extends Migration
         Schema::create('post_subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('subjectId');
-            $table->foreign('subjectId')->references('id')->on('subjects');
-            $table->unsignedBigInteger('postId');
-            $table->foreign('postId')->references('id')->on('posts');
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->boolean('active');
             $table->timestamps();
         });

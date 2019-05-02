@@ -16,10 +16,10 @@ class CreatePostCoursesTable extends Migration
         Schema::create('post_courses', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('courseId');
-            $table->foreign('courseId')->references('id')->on('courses');
-            $table->unsignedBigInteger('postId');
-            $table->foreign('postId')->references('id')->on('posts');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->boolean('active');
             $table->timestamps();
         });

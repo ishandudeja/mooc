@@ -32,9 +32,11 @@
 
             <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><i class="fas fa-bars"></i> Programs</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01" data-aos="fade-down" >
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                @foreach (mooc\Programs::all() as $program)
+                <a class="dropdown-item" href="{{'/program/'.$program->name}}">{{$program->name}}</a>
+                {{--<a class="dropdown-item" href="#">Another action</a>--}}
+                {{--<a class="dropdown-item" href="#">Something else here</a>--}}
+                @endforeach
             </div>
         </div>
 

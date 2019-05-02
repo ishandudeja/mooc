@@ -16,10 +16,10 @@ class CreatePostContentsTable extends Migration
         Schema::create('post_contents', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('contentId');
-            $table->foreign('contentId')->references('id')->on('online_contents');
-            $table->unsignedBigInteger('postId');
-            $table->foreign('postId')->references('id')->on('posts');
+            $table->unsignedBigInteger('content_id');
+            $table->foreign('content_id')->references('id')->on('online_contents');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->boolean('active');
             $table->timestamps();
         });

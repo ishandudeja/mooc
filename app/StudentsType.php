@@ -10,6 +10,6 @@ class StudentsType extends Model
         'name','description','countryFrom',
     ];
     public function students(){
-        return $this->hasMany(Students::class,'studentId','id');
+        return $this->hasMany(Students::class);
     }
 }

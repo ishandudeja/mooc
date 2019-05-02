@@ -16,7 +16,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Web Development",
                     'description' => "Web Development",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => "fab fa-chrome",
                 ],
@@ -24,7 +24,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Mobile Apps",
                     'description' => "Mobile Apps",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -32,7 +32,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Programming Languages",
                     'description' => "Programming Languages",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -40,7 +40,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Game Development",
                     'description' => "Game Development",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -48,7 +48,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Databases",
                     'description' => "Databases",
                     'level' => "4",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -56,7 +56,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Software Testing",
                     'description' => "Software Testing",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -64,7 +64,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Software Engineering",
                     'description' => "Software Engineering",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -72,7 +72,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Development Tools",
                     'description' => "Development Tools",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -80,7 +80,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "E-Commerce",
                     'description' => "E-Commerce",
                     'level' => "5",
-                    'programId' => "1",
+                    'programs_id' => "1",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -88,7 +88,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Finance",
                     'description' => "Finance",
                     'level' => "4",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -96,7 +96,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Entrepreneurship",
                     'description' => "Entrepreneurship",
                     'level' => "5",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -104,7 +104,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Communications",
                     'description' => "Communications",
                     'level' => "5",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -112,7 +112,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Management",
                     'description' => "Management",
                     'level' => "5",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -120,7 +120,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Sales",
                     'description' => "Sales",
                     'level' => "6",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -128,7 +128,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Strategy",
                     'description' => "Strategy",
                     'level' => "6",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -136,7 +136,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Operations",
                     'description' => "Operations",
                     'level' => "7",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -144,7 +144,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Project Management",
                     'description' => "Project Management",
                     'level' => "6",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -152,7 +152,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Business Law",
                     'description' => "Business Law",
                     'level' => "7",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -160,7 +160,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Data & Analytics",
                     'description' => "Data & Analytics",
                     'level' => "6",
-                    'programId' => "4",
+                    'programs_id' => "2",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -168,7 +168,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "IT Certification",
                     'description' => "IT Certification",
                     'level' => "",
-                    'programId' => "5",
+                    'programs_id' => "3",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -176,7 +176,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Network & Security",
                     'description' => "Network & Security",
                     'level' => "",
-                    'programId' => "5",
+                    'programs_id' => "3",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -184,7 +184,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Hardware",
                     'description' => "Hardware",
                     'level' => "",
-                    'programId' => "5",
+                    'programs_id' => "3",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -192,7 +192,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Operating Systems",
                     'description' => "Operating Systems",
                     'level' => "",
-                    'programId' => "5",
+                    'programs_id' => "3",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -200,7 +200,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Microsoft",
                     'description' => "Microsoft",
                     'level' => "",
-                    'programId' => "6",
+                    'programs_id' => "4",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -208,7 +208,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Apple",
                     'description' => "Apple",
                     'level' => "",
-                    'programId' => "6",
+                    'programs_id' => "4",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -216,7 +216,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Google",
                     'description' => "Google",
                     'level' => "",
-                    'programId' => "6",
+                    'programs_id' => "4",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -224,7 +224,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "SAP",
                     'description' => "SAP",
                     'level' => "",
-                    'programId' => "6",
+                    'programs_id' => "4",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -232,7 +232,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Personal Transformation",
                     'description' => "Personal Transformation",
                     'level' => "6",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -240,7 +240,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Productivity",
                     'description' => "Productivity",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -248,7 +248,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Leadership",
                     'description' => "Leadership",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -256,7 +256,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Personal Finance",
                     'description' => "Personal Finance",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -264,7 +264,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Career Development",
                     'description' => "Career Development",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -272,7 +272,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Fitness",
                     'description' => "Fitness",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -280,7 +280,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "General Health",
                     'description' => "General Health",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -288,7 +288,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Sports",
                     'description' => "Sports",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -296,7 +296,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Nutrition",
                     'description' => "Nutrition",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -304,7 +304,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Yoga",
                     'description' => "Yoga",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -312,7 +312,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Mental Health",
                     'description' => "Mental Health",
                     'level' => "",
-                    'programId' => "7",
+                    'programs_id' => "5",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -320,7 +320,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Web Design",
                     'description' => "Web Design",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -328,7 +328,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Graphic Design",
                     'description' => "Graphic Design",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -336,7 +336,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Design Tools",
                     'description' => "Design Tools",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -344,7 +344,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "User Experience",
                     'description' => "User Experience",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -352,7 +352,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Game Design",
                     'description' => "Game Design",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -360,7 +360,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Design Thinking",
                     'description' => "Design Thinking",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -368,7 +368,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "3D & Animation",
                     'description' => "3D & Animation",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -376,7 +376,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Fashion",
                     'description' => "Fashion",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -384,7 +384,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Architectural Design",
                     'description' => "Architectural Design",
                     'level' => "",
-                    'programId' => "8",
+                    'programs_id' => "6",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -392,7 +392,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Digital Marketing",
                     'description' => "Digital Marketing",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -400,7 +400,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Search Engine Optimization",
                     'description' => "Search Engine Optimization",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -408,7 +408,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Social Media Marketing",
                     'description' => "Social Media Marketing",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -416,7 +416,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Branding",
                     'description' => "Branding",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -424,7 +424,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Marketing Fundamentals",
                     'description' => "Marketing Fundamentals",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -432,7 +432,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Analytics & Automation",
                     'description' => "Analytics & Automation",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -440,7 +440,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Public Relations",
                     'description' => "Public Relations",
                     'level' => "",
-                    'programId' => "9",
+                    'programs_id' => "7",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -448,7 +448,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Digital Photography",
                     'description' => "Digital Photography",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -456,7 +456,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Photography Fundamentals",
                     'description' => "Photography Fundamentals",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -464,7 +464,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Portraits",
                     'description' => "Portraits",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -472,7 +472,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Photography Tools",
                     'description' => "Photography Tools",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -480,7 +480,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Commercial Photography",
                     'description' => "Commercial Photography",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -488,7 +488,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Video Design",
                     'description' => "Video Design",
                     'level' => "",
-                    'programId' => "10",
+                    'programs_id' => "8",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -496,7 +496,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Instruments",
                     'description' => "Instruments",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -504,7 +504,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Production",
                     'description' => "Production",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -512,7 +512,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Music Fundamentals",
                     'description' => "Music Fundamentals",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -520,7 +520,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Vocal",
                     'description' => "Vocal",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -528,7 +528,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Music Techniques",
                     'description' => "Music Techniques",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -536,7 +536,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Music Software",
                     'description' => "Music Software",
                     'level' => "",
-                    'programId' => "11",
+                    'programs_id' => "10",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -544,7 +544,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Engineering",
                     'description' => "Engineering",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -552,7 +552,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Humanities",
                     'description' => "Humanities",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -560,7 +560,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Math",
                     'description' => "Math",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -568,7 +568,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Science",
                     'description' => "Science",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -576,7 +576,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Online Education",
                     'description' => "Online Education",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -584,7 +584,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Social Science",
                     'description' => "Social Science",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],
@@ -592,7 +592,7 @@ class CourseTableSeeder extends Seeder
                     'name' => "Language",
                     'description' => "Language",
                     'level' => "",
-                    'programId' => "12",
+                    'programs_id' => "11",
                     'active' => boolval(true),
                     'imageUrl' => ""
                 ],

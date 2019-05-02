@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Students extends Model
 {
     protected $fillable = [
-        'firstName', 'lastName', 'gender', 'birthdate', 'mailAddress', 'phone', 'userId', 'studentTypeId', 'active',
+        'firstName', 'lastName', 'gender', 'birthdate', 'mailAddress', 'phone', 'user_id', 'studentType_id', 'active',
     ];
 
     public function Courses()
     {
-        return $this->belongsToMany(Courses::class,'student_courses','studentId','courseId');
+        return $this->belongsToMany(Courses::class,'student_courses','student_id','course_id');
 
     }
 

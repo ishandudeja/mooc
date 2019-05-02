@@ -19,8 +19,8 @@ class CreateOnlineContentsTable extends Migration
             $table->string('caption',100);
             $table->string('description',1000);
             $table->string('url',1000);
-            $table->unsignedBigInteger('subjectId');
-            $table->foreign('subjectId')->references('id')->on('subjects');
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects');
             $table->boolean('active');
             $table->timestamps();
         });
