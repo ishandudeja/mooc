@@ -3,7 +3,7 @@
 @section('content')
     <nav class="navbar navbar-light bg-warning ">
         <span class="navbar-brand mb-0 h1">@if (isset($program)){{ $program->name }}@endif program
-        <a href="{{ url('$program/create') }}" class="btn btn-primary
+        <a href="program/create/new" class="btn btn-primary
 pull-right">
             Add a new course
         </a></span>
