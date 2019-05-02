@@ -39,9 +39,8 @@ Route::get('program/course/{id}', function($id) {
 });
 
 
-Route::get('program/create/new',function (){
-   return view('course.programView');
-});
+Route::get('program/create/new','HomeController@index');
+
 Route::get('program/edit/{id}',function (){
     return view('course.programView');
 });
