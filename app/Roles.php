@@ -10,6 +10,6 @@ class Roles extends Model
         'name', 'description',
     ];
     public function users(){
-        return $this->belongsToMany(User::class,'user_roles','role_id','user_id');
+        return $this->belongsToMany(User::class,'user_roles','role_id','user_id')->withTimestamps();;
     }
 }
