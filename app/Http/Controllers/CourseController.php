@@ -14,7 +14,7 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
 
     /**
@@ -37,7 +37,7 @@ class CourseController extends Controller
     public function edit($id){
         return view('course.courseView');
     }
-    public function save(array $data){
+    public function save(Request $data){
         return redirect()->action('CourseController@index', ['id' => $data['programs_id'] ]);
     }
 }
