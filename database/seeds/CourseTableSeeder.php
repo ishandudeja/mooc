@@ -18,7 +18,7 @@ class CourseTableSeeder extends Seeder
                     'level' => "5",
                     'programs_id' => "1",
                     'active' => boolval(true),
-                    'imageUrl' => "fab fa-chrome",
+                    'imageUrl' => "https://cdn4.iconfinder.com/data/icons/online-education-9/500/online-education-study_11-512.png",
                 ],
                 [
                     'name' => "Mobile Apps",
