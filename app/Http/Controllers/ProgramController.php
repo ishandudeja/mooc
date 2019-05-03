@@ -9,8 +9,8 @@ class ProgramController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('guest');
-        $this->middleware('role:ROLE_STUDENT');
+        $this->middleware('guest');
+       // $this->middleware('role:ROLE_STUDENT');
     }
 
     /**
@@ -52,12 +52,10 @@ class ProgramController extends Controller
                  'description' => $data['description'],
                  'imageUrl' => $data['imageUrl'],
                  'active' => boolval(true)
-
-
              ]);
          }
          catch (Exception $e){
-             return  redirect()->back()->with('message-error', 'Fale to save data something went wrong!');
+             return  redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
          }
         return  redirect()->back()->with('message', 'Save your data successfully!');
        //return redirect()->action('HomeController@index');

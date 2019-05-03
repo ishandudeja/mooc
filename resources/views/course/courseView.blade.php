@@ -81,5 +81,15 @@
                 </div>
             </div>
         </div>
+        @if(session()->has('message'))
+            <div class="alert alert-success mt-5">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+        @if(session()->has('message-error mt-5'))
+            <div class="alert alert-danger">
+                {{ session()->get('message-error') }}
+            </div>
+        @endif
     </div>
 @endsection

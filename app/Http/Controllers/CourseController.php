@@ -3,6 +3,7 @@
 namespace mooc\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use mooc\Courses;
 
 class CourseController extends Controller
@@ -14,8 +15,8 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('auth');
-        $this->middleware('role:ROLE_STUDENT');
+       $this->middleware('guest');
+       // $this->middleware('role:ROLE_STUDENT');
     }
 
     /**
@@ -39,6 +40,21 @@ class CourseController extends Controller
         return view('course.courseView');
     }
     public function save(Request $data){
+
+        try {
+            Courses::create([
+                'name' => $data['name'],
+                'description' => $data['description'],
+                'level'=>$data['level'],
+                'programs_id'=>Input::get('id', '1'),
+                'imageUrl' => $data['imageUrl'],
+                'active' => boolval(true)
+            ]);
+        }
+        catch (Exception $e){
+            return  redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
+        }
+        return  redirect()->back()->with('message', 'Save your data successfully!');
 
         return redirect()->action('HomeController@index');
     }
