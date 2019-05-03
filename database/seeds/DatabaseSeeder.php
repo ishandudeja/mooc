@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             RoleTableSeeder::class,
             UserRoleTableSeeder::class,
             ProgramsTableSeeder::class,
-            CourseTableSeeder::class
+            CourseTableSeeder::class,
+            SubjectTableSeeder::class
 
 
         ]);

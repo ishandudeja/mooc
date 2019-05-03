@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="container">
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Create Program') }}</div>
+                    <div class="card-header">{{ __('Program') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('programs') }}">
+                        <form method="POST" action="{{ route('saveProgram') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -40,10 +41,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="imageUrl" class="col-md-4 col-form-label text-md-right">{{ __('imageUrl') }}</label>
+                                <label for="imageUrl" class="col-md-4 col-form-label text-md-right">{{ __('ImageUrl') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="imageUrl" type="text" class="form-control" name="imageUrl" required>
+                                    <input id="imageUrl" type="text" class="form-control{{ $errors->has('imageUrl') ? ' is-invalid' : '' }}" name="imageUrl" value="{{ old('imageUrl') }}" required autofocus>
 
                                     @if ($errors->has('imageUrl'))
                                         <span class="invalid-feedback" role="alert">
@@ -58,7 +59,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Create') }}
+                                        {{ __('Save') }}
                                     </button>
                                 </div>
                             </div>
@@ -67,5 +68,17 @@
                 </div>
             </div>
         </div>
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+
+        @if(session()->has('message-error'))
+            <div class="alert alert-danger">
+                {{ session()->get('message-error') }}
+            </div>
+        @endif
+
     </div>
 @endsection

@@ -26,3 +26,4 @@ Route::get('program/edit/{id}','ProgramController@edit')->name('program.edit');
 Route::get('program/{id}/course/create','CourseController@create')->name('course.create');
 Route::get('program/course/edit/{id}','CourseController@edit')->name('course.edit');
 Route::post('course/save','CourseController@save')->name('saveCourse');
+Route::Post('program/save','ProgramController@save')->name('saveProgram');
