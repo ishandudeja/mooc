@@ -8,14 +8,24 @@
                     <div class="card-header">{{ __('Course') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('saveCourse') }}">
+                        {{--<form method="POST" action="{{ route('saveCourse') }}">--}}
+
+                            @if(isset($course))
+                                {{--<form  action="{{ route('editCourse',['id' => Input::get('id', '1')]) }}">--}}
+                                    <form method="post" action="{{ route('editCourse', $course->id) }}">
+                                        @method('PATCH')
+                            @else
+                                <form method="POST" action="{{ route('saveCourse') }}">
+                            @endif
+
+
                             @csrf
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ isset($course) ? $course->name : old('name') }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -77,6 +87,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>

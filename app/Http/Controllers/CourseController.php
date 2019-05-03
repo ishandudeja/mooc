@@ -37,7 +37,10 @@ class CourseController extends Controller
     }
 
     public function edit($id){
-        return view('course.courseView');
+        $course=Courses::find($id);
+
+         return view('course.courseView', compact('course'));
+
     }
 
     protected function validator(array $data)
