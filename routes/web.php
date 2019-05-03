@@ -29,4 +29,4 @@ Route::post('course/save','CourseController@save')->name('saveCourse');
 Route::Post('program/save','ProgramController@save')->name('saveProgram');
 Route::get('program/course/subject/{id}', 'SubjectController@index');
 Route::get('topSubjects', 'CourseController@topSubjects');
-Route::get('topPrograms', 'ProgramController@topPRograms');
+Route::get('topPrograms', 'ProgramController@topPrograms');

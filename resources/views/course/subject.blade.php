@@ -13,7 +13,7 @@ pull-right">
             Add Content
         </a>
         </span>
-    </nav>      
+    </nav>
     <div class="container mt-4">
         <div class="row">
 
