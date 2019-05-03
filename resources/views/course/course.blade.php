@@ -2,11 +2,17 @@
 
 @section('content')
     <nav class="navbar navbar-light bg-warning ">
-        <span class="navbar-brand mb-0 h1">@if (isset($course)){{ $course->name }}@endif Course
+        <span class="navbar-brand mb-0 h1">@if (isset($course)){{ $course->name }}@endif Course </span>
+        <span>
         <a href="{{ url('program/'.$course->id.'/course/create') }}" class="btn btn-primary
 pull-right">
-            Add a new course
-        </a></span>
+            Add Subject
+        </a>
+         <a href="{{ url('program/'.$course->id.'/course/create') }}" class="btn btn-primary
+pull-right">
+            Add Content
+        </a>
+        </span>
     </nav>
     <div class="container mt-4">
         <div class="row">
@@ -15,7 +21,7 @@ pull-right">
 
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" src="{{$subject->imageUrl}}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $subject->name }}</h5>
                             <p class="card-text">
