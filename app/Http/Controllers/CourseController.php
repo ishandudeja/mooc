@@ -39,6 +39,16 @@ class CourseController extends Controller
     public function edit($id){
         return view('course.courseView');
     }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string',  'max:255'],
+            'level'=>['string',  'max:255'],
+            'imageUrl' => ['required', 'string','max:255']
+        ]);
+    }
     public function save(Request $data){
 
         try {

@@ -27,8 +27,8 @@ pull-right">
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="{{ url('program/course/'.$course->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            <a href="{{ url('program/course/'.$course->id)}}" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="{{url('program/course/edit/'.$course->id)}}" class="btn btn-sm btn-outline-secondary">Edit</a>
                         </div>
                         <small class="text-muted">9 mins</small>
                     </div>
