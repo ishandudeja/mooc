@@ -14,4 +14,7 @@ class SubjectController extends Controller
             ->with('subject',$subject)
             ->with('online_contents', $subject->online_contents);
     }
+    public function create(){
+        return view('course.subjectView');
+    }
 }

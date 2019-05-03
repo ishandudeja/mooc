@@ -28,3 +28,4 @@ Route::get('program/course/edit/{id}','CourseController@edit')->name('course.edi
 Route::post('course/save','CourseController@save')->name('saveCourse');
 Route::Post('program/save','ProgramController@save')->name('saveProgram');
 Route::get('program/course/subject/{id}', 'SubjectController@index');
+Route::get('program/course/{id}/subject/create','SubjectController@create')->name('subject.create');

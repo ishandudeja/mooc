@@ -4,7 +4,7 @@
     <nav class="navbar navbar-light bg-warning ">
         <span class="navbar-brand mb-0 h1">@if (isset($course)){{ $course->name }}@endif Course </span>
         <span>
-        <a href="{{ url('program/'.$course->id.'/course/create') }}" class="btn btn-primary
+        <a href="{{ url('program/course/'.$course->id.'/subject/create') }}" class="btn btn-primary
 pull-right">
             Add Subject
         </a>
@@ -29,7 +29,7 @@ pull-right">
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="{{ url('program/course/'.$subject->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
+                                    <a href="{{ url('program/course/subject/'.$subject->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
                                     <a href="{{url('program/course/edit/'.$subject->id)}}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                 </div>
                                 <small class="text-muted">9 mins</small>
