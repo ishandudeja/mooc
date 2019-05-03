@@ -2030,6 +2030,7 @@ return array(
     'NunoMaduro\\Collision\\Highlighter' => $vendorDir . '/nunomaduro/collision/src/Highlighter.php',
     'NunoMaduro\\Collision\\Provider' => $vendorDir . '/nunomaduro/collision/src/Provider.php',
     'NunoMaduro\\Collision\\Writer' => $vendorDir . '/nunomaduro/collision/src/Writer.php',
+    'OnlineContentsTableSeeder' => $baseDir . '/database/seeds/OnlineContentsTableSeeder.php',
     'Opis\\Closure\\Analyzer' => $vendorDir . '/opis/closure/src/Analyzer.php',
     'Opis\\Closure\\ClosureContext' => $vendorDir . '/opis/closure/src/ClosureContext.php',
     'Opis\\Closure\\ClosureScope' => $vendorDir . '/opis/closure/src/ClosureScope.php',

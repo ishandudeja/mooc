@@ -581,5 +581,6 @@ class SubjectTableSeeder extends Seeder
                 'imageUrl'=>"http://pluspng.com/img-png/english-subject-png-english-2246.png"
             ],
 
-        ]);    }
+        ]);
+    }
 }
