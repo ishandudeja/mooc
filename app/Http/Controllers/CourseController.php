@@ -15,8 +15,8 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-       $this->middleware('guest');
-       // $this->middleware('role:ROLE_STUDENT');
+        $this->middleware('guest');
+        // $this->middleware('role:ROLE_STUDENT');
     }
 
     /**
@@ -26,20 +26,22 @@ class CourseController extends Controller
      */
     public function index($id)
     {
-        $course = Courses::with('subjects')->find($id)->first();
+        $course = Courses::with('subjects')->where('id',$id)->first();
         return view('course.course')
-            ->with('course',$course)
+            ->with('course', $course)
             ->with('subjects', $course->subjects);
     }
 
-    public function create($id){
-        return view('course.courseView');
+    public function create($id)
+    {
+        return view('course.courseView', compact('id'));
     }
 
-    public function edit($id){
-        $course=Courses::find($id);
+    public function edit($id)
+    {
+        $course = Courses::find($id);
 
-         return view('course.courseView', compact('course'));
+        return view('course.courseView', compact('course'));
 
     }
 
@@ -47,28 +49,46 @@ class CourseController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string',  'max:255'],
-            'level'=>['string',  'max:255'],
-            'imageUrl' => ['required', 'string','max:255']
+            'description' => ['required', 'string', 'max:255'],
+            'level' => ['string', 'max:255'],
+            'imageUrl' => ['required', 'string', 'max:255']
         ]);
     }
-    public function save(Request $data){
 
-        try {
-            Courses::create([
-                'name' => $data['name'],
-                'description' => $data['description'],
-                'level'=>$data['level'],
-                'programs_id'=>Input::get('id', '1'),
-                'imageUrl' => $data['imageUrl'],
-                'active' => boolval(true)
-            ]);
-        }
-        catch (Exception $e){
-            return  redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
-        }
-        return  redirect()->back()->with('message', 'Save your data successfully!');
+    public function save(Request $data)
+    {
+        if ($data['courses_id'] == 0) {
+            try {
+                Courses::create([
+                    'name' => $data['name'],
+                    'description' => $data['description'],
+                    'level' => $data['level'],
+                    'programs_id' => $data['programs_id'],
+                    'imageUrl' => $data['imageUrl'],
+                    'active' => boolval(true)
+                ]);
+            } catch (Exception $e) {
+                return redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
+            }
+            return redirect()->back()->with('message', 'Save your data successfully!');
 
-        return redirect()->action('HomeController@index');
+
+        }
+        else{
+            try {
+
+                Courses::where('id',$data['courses_id'])->update([
+                    'name' => $data['name'],
+                    'description' => $data['description'],
+                    'level' => $data['level'],
+                    'programs_id' => $data['programs_id'],
+                    'imageUrl' => $data['imageUrl'],
+                    'active' => boolval(true)
+                ]);
+            } catch (Exception $e) {
+                return redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
+            }
+            return redirect()->back()->with('message', 'Update your data successfully!');
+        }
     }
 }

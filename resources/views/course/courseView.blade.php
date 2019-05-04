@@ -11,8 +11,7 @@
                         {{--<form method="POST" action="{{ route('saveCourse') }}">--}}
 
                             @if(isset($course))
-                                {{--<form  action="{{ route('editCourse',['id' => Input::get('id', '1')]) }}">--}}
-                                    <form method="post" action="{{ route('editCourse', $course->id) }}">
+                             <form method="post" action="{{ route('editCourse', $course->id) }}">
                                         @method('PATCH')
                             @else
                                 <form method="POST" action="{{ route('saveCourse') }}">
@@ -39,7 +38,7 @@
                                 <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}" required>
+                                    <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ isset($course) ? $course->description : old('description') }}" required>
 
                                     @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
@@ -53,7 +52,7 @@
                                 <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('level') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="level" type="text" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" required autofocus>
+                                    <input id="level" type="text" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ isset($course) ? $course->level : old('level') }}" required autofocus>
 
                                     @if ($errors->has('level'))
                                         <span class="invalid-feedback" role="alert">
@@ -67,9 +66,11 @@
                                 <label for="imageUrl" class="col-md-4 col-form-label text-md-right">{{ __('Image Url') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="imageUrl" type="text" class="form-control{{ $errors->has('imageUrl') ? ' is-invalid' : '' }}" name="imageUrl" required>
+                                    <input id="imageUrl" type="text" class="form-control{{ $errors->has('imageUrl') ? ' is-invalid' : '' }}" name="imageUrl"  value="{{ isset($course) ? $course->imageUrl : old('imageUrl') }}" required>
+                                    <input id="programs_id" type="hidden"  name="programs_id"  value="{{ isset($course) ? $course->programs_id : $id }}" >
+                                    <input id="courses_id" type="hidden"  name="courses_id"  value="{{ isset($course) ? $course->id : 0 }}" >
 
-                                    @if ($errors->has('imageUrl'))
+                                @if ($errors->has('imageUrl'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('imageUrl') }}</strong>
                                     </span>

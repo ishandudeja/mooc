@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('program/{name}','ProgramController@index');
-Route::get('program/course/{id}', 'CourseController@index');
+Route::get('program/course/{id}', 'CourseController@index')->name('courseList');
 Route::get('program/create/new','ProgramController@create')->name('program.create');
 Route::get('program/edit/{id}','ProgramController@edit')->name('program.edit');
 Route::get('program/{id}/course/create','CourseController@create')->name('course.create');
@@ -28,9 +28,10 @@ Route::get('program/course/edit/{id}','CourseController@edit')->name('course.edi
 Route::post('course/save','CourseController@save')->name('saveCourse');
 Route::Post('program/save','ProgramController@save')->name('saveProgram');
 Route::patch('course/edit','CourseController@save')->name('editCourse');
-Route::get('program/course/subject/{id}', 'SubjectController@index');
+Route::get('program/course/subject/{id}', 'SubjectController@index')->name('subjectsList');
 Route::get('topSubjects', 'CourseController@topSubjects');
 Route::get('topPrograms', 'ProgramController@topPrograms');
-
-
 Route::get('program/course/{id}/subject/create','SubjectController@create')->name('subject.create');
+Route::get('program/course/subject/edit/{id}','SubjectController@edit')->name('subject.edit');
+Route::post('subject/save','SubjectController@save')->name('saveSubject');
+Route::patch('subject/edit','SubjectController@save')->name('editSubject');
