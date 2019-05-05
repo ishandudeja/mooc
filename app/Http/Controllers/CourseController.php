@@ -16,7 +16,7 @@ class CourseController extends Controller
     public function __construct()
     {
 //        $this->middleware('guest');
-//        $this->middleware('auth');
+////        $this->middleware('auth');
         // $this->middleware('role:ROLE_STUDENT');
         $this->middleware('role:ROLE_ADMIN',['except'=>'index']);
     }
@@ -59,8 +59,17 @@ class CourseController extends Controller
 
     public function save(Request $data)
     {
-        if ($data['courses_id'] == 0) {
+        $validatedData = $data->validate([
+            'name'     => 'required|regex:/^[\pL\s\-]+$/u',
+            'description' => ['required', 'string', 'max:255'],
+            'level' => ['string', 'max:255'],
+            'imageUrl' => ['required', 'string', 'max:255']
+        ]);
+        if ($data['courses_id'] == 0&&$validatedData) {
             try {
+
+
+
                 Courses::create([
                     'name' => $data['name'],
                     'description' => $data['description'],

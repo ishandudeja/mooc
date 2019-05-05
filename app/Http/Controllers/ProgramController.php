@@ -47,18 +47,24 @@ class ProgramController extends Controller
     }
     public function save(Request $data){
 
-         try {
-             Programs::create([
-                 'name' => $data['name'],
-                 'description' => $data['description'],
-                 'imageUrl' => $data['imageUrl'],
-                 'active' => boolval(true)
-             ]);
-         }
-         catch (Exception $e){
-             return  redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
-         }
-        return  redirect()->back()->with('message', 'Save your data successfully!');
+        $validatedData = $data->validate([
+            'name'     => 'required|regex:/^[\pL\s\-]+$/u',
+            'description' => ['required', 'string', 'max:255'],
+            'imageUrl' => ['required', 'string', 'max:255']
+        ]);
+        if($validatedData) {
+            try {
+                Programs::create([
+                    'name' => $data['name'],
+                    'description' => $data['description'],
+                    'imageUrl' => $data['imageUrl'],
+                    'active' => boolval(true)
+                ]);
+            } catch (Exception $e) {
+                return redirect()->back()->with('message-error', 'Fail to save data something went wrong!');
+            }
+            return redirect()->back()->with('message', 'Save your data successfully!');
+        }
        //return redirect()->action('HomeController@index');
     }
 }

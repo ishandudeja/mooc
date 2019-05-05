@@ -38,7 +38,14 @@ class ContentController extends Controller
 
     public function save(Request $data)
     {
-        if ($data['content_id'] == 0) {
+        $validatedData = $data->validate([
+            'caption' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:255'],
+
+            'url' => ['required', 'string', 'max:255']
+        ]);
+         
+        if ($data['content_id'] == 0 && $validatedData) {
             try {
                 OnlineContent::create([
                     'caption' => $data['caption'],
