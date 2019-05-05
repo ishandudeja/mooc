@@ -19,6 +19,10 @@
         @endif
         <div class="row">
 
+            @if(!isset($courses[0]))
+            <h3>There is no course in you learning! Thanks for Enrollment</h3>
+            @endif
+
             @foreach ($courses as $course)
                                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
