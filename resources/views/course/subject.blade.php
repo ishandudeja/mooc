@@ -4,10 +4,14 @@
     <nav class="navbar navbar-light bg-warning ">
         <span class="navbar-brand mb-0 h1">@if (isset($subject)){{ $subject->name }}@endif Subject </span>
         <span>
+            @auth
+                @if(Auth::user()->hasRole('ROLE_ADMIN'))
          <a href="{{ url('program/course/subject/'.$subject->id.'/content/create') }}" class="btn btn-primary
 pull-right">
             Add Content
         </a>
+            @endif
+            @endauth
         </span>
     </nav>
     <div class="container mt-4">
@@ -29,10 +33,14 @@ pull-right">
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="{{ url('program/course/subject/content'.$content->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
+                                    <a href="{{ url('program/course/subject/content/'.$content->id) }}" class="btn btn-sm btn-outline-secondary">Post Query</a>
+                                    @auth
+                                        @if(Auth::user()->hasRole('ROLE_ADMIN'))
                                     <a href="{{url('program/course/subject/content/edit/'.$content->id)}}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        @endif
+                                    @endauth
                                 </div>
-                                <small class="text-muted">9 mins</small>
+
                             </div>
                         </div>
                     </div>

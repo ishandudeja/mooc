@@ -13,6 +13,7 @@ class PostComments extends Model
      return   $this->belongsTo(Posts::class);
     }
 
+
     public function user(){
         return $this->belongsTo(User::class);
     }

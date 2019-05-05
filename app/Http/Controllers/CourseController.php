@@ -15,8 +15,10 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+      //  $this->middleware('guest');
+        $this->middleware('auth');
         // $this->middleware('role:ROLE_STUDENT');
+        $this->middleware('role:ROLE_ADMIN',['except'=>'index']);
     }
 
     /**
@@ -45,7 +47,7 @@ class CourseController extends Controller
 
     }
 
-    protected function validator(array $data)
+    protected function validator(Request $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],

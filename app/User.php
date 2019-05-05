@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    protected $guard = 'admin';
     /**
      * The attributes that are mass assignable.
      *
@@ -36,8 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function students(){
-        return $this->hasOne(Students::class);
+    public function courses()
+    {
+        return $this->belongsToMany(Courses::class,'student_courses','user_id','course_id');
+
     }
 
     public function postComments()
@@ -87,4 +89,12 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function hasPurchase($id){
+       if( $this->courses()->where('course_id',$id)->first()){
+           return true;
+       }
+       return false;
+    }
+
 }

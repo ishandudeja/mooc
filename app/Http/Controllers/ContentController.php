@@ -3,55 +3,48 @@
 namespace mooc\Http\Controllers;
 
 use Illuminate\Http\Request;
-use mooc\Subjects;
+use mooc\OnlineContent;
 
-class SubjectController extends Controller
+class ContentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        //$this->middleware('guest');
-         //$this->middleware('role:ROLE_STUDENT');
+       $this->middleware('auth');
+        // $this->middleware('role:ROLE_STUDENT');
     }
-    public function index($id)
-    {
-        $subject = Subjects::with('onlineContent')->where('id',$id)->first();
-        return view('course.subject')
-            ->with('subject',$subject)
-            ->with('contents', $subject->onlineContent);
-    }
+
     public function create($id){
-        return view('course.subjectView',compact('id'));
+        return view('course.contentView',compact('id'));
     }
 
 
     public function edit($id)
     {
-        $subject = Subjects::find($id);
+        $content = OnlineContent::find($id);
 
-        return view('course.subjectView', compact('subject'));
+        return view('course.contentView', compact('content'));
 
     }
 
     protected function validator(Request $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'caption' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:255'],
 
-            'imageUrl' => ['required', 'string', 'max:255']
+            'url' => ['required', 'string', 'max:255']
         ]);
     }
 
     public function save(Request $data)
     {
-        if ($data['subjects_id'] == 0) {
+        if ($data['content_id'] == 0) {
             try {
-                Subjects::create([
-                    'name' => $data['name'],
+                OnlineContent::create([
+                    'caption' => $data['caption'],
                     'description' => $data['description'],
-                    'courses_id' => $data['courses_id'],
-                    'imageUrl' => $data['imageUrl'],
+                    'subjects_id' => $data['subjects_id'],
+                    'url' => $data['url'],
                     'active' => boolval(true)
                 ]);
             } catch (Exception $e) {
@@ -64,11 +57,11 @@ class SubjectController extends Controller
         else{
             try {
 
-                Subjects::where('id',$data['subjects_id'])->update([
-                    'name' => $data['name'],
+                OnlineContent::where('id',$data['subjects_id'])->update([
+                    'caption' => $data['caption'],
                     'description' => $data['description'],
-                    'courses_id' => $data['courses_id'],
-                    'imageUrl' => $data['imageUrl'],
+                    'subjects_id' => $data['subjects_id'],
+                    'url' => $data['url'],
                     'active' => boolval(true)
                 ]);
             } catch (Exception $e) {

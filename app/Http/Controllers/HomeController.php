@@ -3,6 +3,10 @@
 namespace mooc\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use mooc\Courses;
+use mooc\StudentCourse;
+use mooc\User;
 
 class HomeController extends Controller
 {
@@ -13,7 +17,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:web');
+
+       // $this->middleware('role:ROLE_STUDENT');
+
     }
 
     /**
@@ -22,7 +29,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {        $user=User::with('courses')->find(Auth::id());
+        return view('home')->with('courses',$user->courses);
     }
 }

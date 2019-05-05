@@ -12,7 +12,7 @@ class Students extends Model
 
     public function Courses()
     {
-        return $this->belongsToMany(Courses::class,'student_courses','student_id','course_id');
+        return $this->belongsToMany(Courses::class,'student_courses','student_id','courses_id');
 
     }
 

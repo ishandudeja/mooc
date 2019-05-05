@@ -15,8 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">--}}
-    <!-- Styles -->
+{{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">--}}
+<!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -28,14 +28,16 @@
                 {{ config('app.name', 'Laravel') }}
             </a>
         </h5>
-         <div class="my-0 mr-md-auto font-weight-normal nav-item dropdown">
+        <div class="my-0 mr-md-auto font-weight-normal nav-item dropdown">
 
-            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><i class="fas fa-bars"></i> Programs</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01" data-aos="fade-down" >
+            <a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="false"
+               aria-expanded="false"><i class="fas fa-bars"></i> Programs</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01" data-aos="fade-down">
                 @foreach (mooc\Programs::all() as $program)
-                <a class="dropdown-item" href="{{'/program/'.$program->name}}"><i class="{{$program->imageUrl}}"></i> {{$program->name}}</a>
-                {{--<a class="dropdown-item" href="#">Another action</a>--}}
-                {{--<a class="dropdown-item" href="#">Something else here</a>--}}
+                    <a class="dropdown-item" href="{{'/program/'.$program->name}}"><i
+                            class="{{$program->imageUrl}}"></i> {{$program->name}}</a>
+                    {{--<a class="dropdown-item" href="#">Another action</a>--}}
+                    {{--<a class="dropdown-item" href="#">Something else here</a>--}}
                 @endforeach
             </div>
         </div>
@@ -47,15 +49,22 @@
         <nav class="my-2 my-md-0 mr-md-3">
             @if (Route::has('login'))
 
-                    @auth
-                        <a class="p-2 text-dark" href="{{ url('/home') }}">My Learning <i class="fas fa-chalkboard-teacher"></i></a>
+                @auth
+                    @if(Auth::user()->hasRole('ROLE_ADMIN'))
+                        <a class="p-2 text-dark" href="{{ url('/admin') }}">Admin Panal <i
+                                class="fas fa-chalkboard-teacher"></i></a>
                     @else
-                        {{--<a class="p-2 text-dark" href="{{ route('login') }}">Enrol Now</a>--}}
+                        <a class="p-2 text-dark" href="{{ url('/home') }}">My Learning <i
+                                class="fas fa-chalkboard-teacher"></i></a>
+                    @endif
+                @else
+                    {{--<a class="p-2 text-dark" href="{{ route('login') }}">Enrol Now</a>--}}
 
-                        @if (Route::has('register'))
-                            <a class="p-2 text-dark" href="{{ route('register') }}">Enrol Now <i class="fas fa-hand-pointer"></i></a>
-                        @endif
-                    @endauth
+                    @if (Route::has('register'))
+                        <a class="p-2 text-dark" href="{{ route('register') }}">Enrol Now <i
+                                class="fas fa-hand-pointer"></i></a>
+                    @endif
+                @endauth
 
             @endif
             <a class="p-2 text-dark" href="#">Program Offered <i class="fas fa-user-graduate"></i></a>
@@ -69,7 +78,7 @@
 
                 {{--@if (Route::has('register'))--}}
 
-                    {{--<a class="p-2 text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+                {{--<a class="p-2 text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
 
                 {{--@endif--}}
             @else

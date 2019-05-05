@@ -3,7 +3,7 @@
 namespace mooc\Http\Middleware;
 
 use Closure;
-
+use Illuminate\Support\Facades\Auth;
 class CheckRole
 {
     /**
@@ -16,7 +16,8 @@ class CheckRole
     public function handle($request, Closure $next,$role)
     {
         if (! $request->user()->hasRole($role)) {
-            abort(401, 'This action is unauthorized.');
+           // abort(401, 'This action is unauthorized.');
+            return redirect('');
         }
         return $next($request);
         //return $next($request);

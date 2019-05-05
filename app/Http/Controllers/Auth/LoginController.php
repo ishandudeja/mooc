@@ -2,6 +2,7 @@
 
 namespace mooc\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use mooc\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -35,5 +36,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        $roles=$this->guard()->user()->roles;
+        foreach ($roles as $role) {
+            if ($role->name == "ROLE_ADMIN") {
+                return redirect("/admin");
+            } elseif ($role->name == "ROLE_STUDENT") {
+                return redirect("/home");
+            }
+        }
+//        return $this->authenticated($request, $this->guard()->user())
+//            ?: redirect()->intended($this->redirectPath());
     }
 }

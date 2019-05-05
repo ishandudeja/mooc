@@ -9,8 +9,9 @@ class ProgramController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest');
-       // $this->middleware('role:ROLE_STUDENT');
+     //   $this->middleware('guest');
+       $this->middleware('auth');
+        $this->middleware('role:ROLE_ADMIN',['except'=>'index']);
     }
 
     /**
@@ -36,7 +37,7 @@ class ProgramController extends Controller
         return view('course.programView');
     }
 
-    protected function validator(array $data)
+    protected function validator(Request $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
